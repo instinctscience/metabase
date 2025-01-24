@@ -120,6 +120,10 @@
                                  ["'self'"
                                   "https://maps.google.com"
                                   "https://accounts.google.com"
+                                  "https://cdn.us.heap-api.com"
+                                  "https://heapanalytics.com"
+                                  "'unsafe-inline'"
+                                  "'unsafe-eval'"
                                   (when (public-settings/anon-tracking-enabled)
                                     "https://www.google-analytics.com")
                                   ;; for webpack hot reloading
@@ -138,6 +142,7 @@
                   :child-src    ["'self'"
                                  "https://accounts.google.com"]
                   :style-src    ["'self'"
+                                 "https://heapanalytics.com"
                                  ;; See [[generate-nonce]]
                                  (when nonce
                                    (format "'nonce-%s'" nonce))
@@ -153,6 +158,8 @@
                   :img-src      ["*"
                                  "'self' data:"]
                   :connect-src  ["'self'"
+                                 "https://heapanalytics.com"
+                                 "https://c.us.heap-api.com"
                                  ;; Google Identity Services
                                  "https://accounts.google.com"
                                  ;; MailChimp. So people can sign up for the Metabase mailing list in the sign up process

@@ -84,6 +84,7 @@
      {:bootstrapJS          (load-inline-js "index_bootstrap")
       :bootstrapJSON        (escape-script (json/generate-string public-settings))
       :assetOnErrorJS       (load-inline-js "asset_loading_error")
+      :heapJS               (load-inline-js "instinct_heap")
       :userLocalizationJSON (escape-script (load-localization (when should-load-locale-params? (:locale params))))
       :siteLocalizationJSON (escape-script (load-localization (public-settings/site-locale)))
       :nonceJSON            (escape-script (json/generate-string nonce))
