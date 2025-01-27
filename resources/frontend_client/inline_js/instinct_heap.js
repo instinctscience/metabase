@@ -51,17 +51,17 @@
 
 function isInstinctProd() {
   // TODO: There's at least one more prod domain, right?
-  return window.location.hostname.endsWith('.instinctvet.com');
+  return window.location.hostname.endsWith(".instinctvet.com");
 }
 
 function setupHeap() {
-  const HEAP_ID_PROD = '152788304';
-  const HEAP_ID_DEV = '4239195470';
+  const HEAP_ID_PROD = "152788304";
+  const HEAP_ID_DEV = "4239195470";
 
   const heapId = isInstinctProd() ? HEAP_ID_PROD : HEAP_ID_DEV;
   window.heap.load(heapId);
-  window.heap.addUserProperties({
-    sourceApplication: 'metabase',
+  window.heap.addEventProperties({
+    sourceApplication: "metabase-embed",
   });
 }
 
